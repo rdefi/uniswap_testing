@@ -1,24 +1,23 @@
 const hre = require("hardhat");
 
 async function main() {
-  const amountIn = 10n ** 16n;  // just added
-  const amountInMaximum = 10n ** 16n;   // just added
+  const amountIn = 10n ** 16n;  
+  const amountInMaximum = 10n ** 16n;   
 
   console.log("deploying...");
-  const SwapExamples = await hre.ethers.getContractFactory("SwapExamples");
-  // const swapExamples = await SwapExamples.deploy(0xE592427A0AEce92De3Edee1F18E0157C05861564);
-  const swapExamples = await SwapExamples.deploy();
+  const SwapExamplesFactory = await hre.ethers.getContractFactory("SwapExamples");
 
-  await swapExamples.deployed();
+  const swapExamplesFactory = await SwapExamplesFactory.deploy();
 
-  console.log("SwapExamples contract deployed: ", swapExamples.address);
+  await swapExamplesFactory.deployed();
 
-  await swapExamples.swapExactInputSingle(amountIn);   // just added
-  // await swapExamples.swapExactInputSingle(swapExamples.amountOut, amountInMaximum);   // just added
-  await swapExamples.swapExactOutputSingle(swapExamples.amountOut, amountInMaximum);   // just added
+  console.log("SwapExamples contract deployed: ", swapExamplesFactory.address);
 
+  await swapExamplesFactory.swapExactInputSingle(amountIn);   
 
-  const deployContract = await swapExamples.swapExactInputSingle(amountIn)
+  await swapExamplesFactory.swapExactOutputSingle(swapExamplesFactory.amountOut, amountInMaximum);   
+
+  const deployContract = await swapExamplesFactory.swapExactInputSingle(amountIn)
 
 }
 
@@ -26,3 +25,6 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+
+// When I run this code, the error I get is "invalid BigNumber value"
