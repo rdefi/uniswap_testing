@@ -28,3 +28,4 @@ main().catch((error) => {
 
 
 // When I run this code, the error I get is "invalid BigNumber value"
+// but it still uses gas
