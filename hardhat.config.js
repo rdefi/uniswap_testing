@@ -9,7 +9,7 @@ require("solidity-coverage");
 // const ALCHEMY_API_KEY = "STGFzKrYFzOFZscYY1-TfP-exED5SiDX";  // Goerli Test dashboard.alchemy.com
 const ALCHEMY_API_KEY = "ddlajVqnq0eg7mxq0oFzYjVHOh2XtjWb";     // Goerli Test dashboard.alchemy.com
 
-const GOERLI_PRIVATE_KEY = "71e35c50b42381c4252ff8c8edcedf1701030bd6276f3e74ab388dfb5183ba62";
+const GOERLI_PRIVATE_KEY = "xxx";  // Removed private key to push to my repo, which is public
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
